@@ -28,7 +28,7 @@ jobs:
       - run: npm ci
       - run: npm run verify
       - name: Stage site
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         run: |
           mkdir -p _site
           rsync -a --exclude node_modules --exclude .git --exclude .github \
@@ -36,7 +36,7 @@ jobs:
             --exclude content --exclude package.json --exclude package-lock.json \
             . _site/
       - name: Upload Pages artifact
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
@@ -44,7 +44,7 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: verify
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
