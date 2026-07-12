@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- {{META_COMMENT}} -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — {{SITE_NAME}}</title>
+<meta name="description" content="{{META_DESC}}">
+<meta name="theme-color" content="{{THEME_COLOR}}">
+<link rel="icon" href="{{REL}}icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="{{REL}}manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{REL}}style.css">
+<script>
+// Pre-paint theme: honor stored choice, else OS preference. Runs before
+// first paint so there is no flash of the wrong register.
+(function () {
+  try {
+    var t = localStorage.getItem('hd-tea-theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* private mode: fall through to media query */ }
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="topnav">
+  <a href="{{REL}}index.html" class="topnav-brand" aria-label="{{SITE_NAME}} home"><span class="brand-cup" aria-hidden="true"></span>{{SITE_NAME}}</a>
+  <div class="topnav-links">
+    <a href="{{REL}}pages/hubs/library.html"{{NAV_CUR_library}}>Library</a>
+    <a href="{{REL}}pages/hubs/origins.html"{{NAV_CUR_origins}}>Origins</a>
+    <a href="{{REL}}pages/hubs/craft.html"{{NAV_CUR_craft}}>Craft</a>
+    <a href="{{REL}}pages/hubs/table.html"{{NAV_CUR_table}}>Table</a>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme">theme</button>
+  </div>
+</nav>
+<button class="toc-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Contents ▾</button>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+{{SIDEBAR}}
+  </aside>
+  <main class="main" id="main">
+{{HERO}}
+{{BODY}}
+{{SOURCES}}
+    <footer class="page-footer">
+      <span class="pf-label">{{SITE_NAME}} · {{CATEGORY_LABEL}}{{UPDATED}}</span>
+      <a href="{{REL}}index.html" class="footer-back">← Home</a>
+    </footer>
+  </main>
+</div>
+<script src="{{REL}}scripts/toc-scroll.js"></script>
+<script src="{{REL}}scripts/theme.js"></script>
+</body>
+</html>

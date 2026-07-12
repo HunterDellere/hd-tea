@@ -1,0 +1,25 @@
+{
+  "_comment": "Registry of acceptable content_sources labels. A source cited in frontmatter should start with one of these prefixes; unknown labels WARN at validate-claims time. Add new sources here deliberately: the whole point is that 'the internet' is not a source. min_sources_verified lists categories that need two or more sources before content_review can flip to verified.",
+  "min_sources_verified": {
+    "regions": 2,
+    "tisanes": 2,
+    "default": 1
+  },
+  "sources": [
+    { "prefix": "Gascoyne", "full": "Gascoyne, Marchand, Desharnais & Américi — Tea: History, Terroirs, Varieties (Camellia Sinensis Tea House)", "kind": "book" },
+    { "prefix": "Heiss", "full": "Mary Lou Heiss & Robert J. Heiss — The Story of Tea / The Tea Enthusiast's Handbook", "kind": "book" },
+    { "prefix": "Gebely", "full": "Tony Gebely — Tea: A User's Guide (teaepicure.com)", "kind": "book" },
+    { "prefix": "Mair & Hoh", "full": "Victor Mair & Erling Hoh — The True History of Tea", "kind": "book" },
+    { "prefix": "Zhang", "full": "Jinghong Zhang — Puer Tea: Ancient Caravans and Urban Chic", "kind": "book" },
+    { "prefix": "Chajing", "full": "Lu Yu — The Classic of Tea (茶经, 8th c.), cited via a named translation", "kind": "primary" },
+    { "prefix": "Okakura", "full": "Kakuzō Okakura — The Book of Tea (1906)", "kind": "primary" },
+    { "prefix": "UNESCO", "full": "UNESCO World Heritage List entries (whc.unesco.org)", "kind": "institutional" },
+    { "prefix": "FAO", "full": "UN Food and Agriculture Organization tea statistics and reports", "kind": "institutional" },
+    { "prefix": "ITC", "full": "International Tea Committee — Annual Bulletin of Statistics", "kind": "institutional" },
+    { "prefix": "TRES", "full": "Taiwan Tea Research and Extension Station publications", "kind": "institutional" },
+    { "prefix": "Babelcarp", "full": "Babelcarp Chinese tea lexicon (babelcarp.org)", "kind": "reference" },
+    { "prefix": "Kew", "full": "Royal Botanic Gardens, Kew — Plants of the World Online (botanical names)", "kind": "institutional" },
+    { "prefix": "Commission E", "full": "German Commission E monographs (herbal safety/traditional use)", "kind": "institutional" },
+    { "prefix": "EMA", "full": "European Medicines Agency herbal monographs (traditional-use status)", "kind": "institutional" }
+  ]
+}

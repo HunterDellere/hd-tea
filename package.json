@@ -1,0 +1,22 @@
+{
+  "name": "hd-tea",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "validate": "node build/validate.mjs",
+    "validate:voice": "node build/validate-voice.mjs",
+    "validate:claims": "node build/validate-claims.mjs",
+    "check": "node build/check.mjs && node build/validate-voice.mjs && node build/validate-claims.mjs",
+    "verify": "npm run validate && npm run build && npm run check",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "gray-matter": "^4.0.3"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1"
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hd-tea — a working atlas of tea</title>
+<meta name="description" content="A working atlas of tea: origins and terroir, the six types and tisanes, craft from garden to firing, and the table where it all lands.">
+<meta name="theme-color" content="#f1eee7">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Fragment+Mono&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    var t = localStorage.getItem('hd-tea-theme');
+    if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* private mode */ }
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="topnav">
+  <a href="index.html" class="topnav-brand" aria-label="hd-tea home"><span class="brand-cup" aria-hidden="true"></span>hd-tea</a>
+  <div class="topnav-links">
+    <a href="pages/hubs/library.html">Library</a>
+    <a href="pages/hubs/origins.html">Origins</a>
+    <a href="pages/hubs/craft.html">Craft</a>
+    <a href="pages/hubs/table.html">Table</a>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme">theme</button>
+  </div>
+</nav>
+<main class="home-main" id="main">
+  <header class="home-hero">
+    <h1 class="home-title">Six colors of the leaf, <em>poured and read.</em></h1>
+    <p class="home-sub">A working atlas of tea: where it grows, how it is made, and how it lands in the cup. Kept by a practitioner; written for the table.</p>
+  </header>
+
+  <div class="flight" id="flight" aria-label="Browse by tea type">
+    <!-- populated by scripts/homepage.js from data/entries.json -->
+  </div>
+
+  <div class="home-search">
+    <label class="sr-only" for="q" style="position:absolute;left:-9999px">Search the atlas</label>
+    <input id="q" type="search" placeholder="Search teas, regions, craft…" autocomplete="off">
+    <div class="search-results" id="search-results" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="home-section-head">
+    <h2 class="home-section-title">The rooms</h2>
+  </div>
+  <div class="hub-cards">
+    <a class="hub-card" href="pages/hubs/library.html" style="--hub-c:var(--cat-teas)">
+      <span class="hub-card-title">The Library</span>
+      <p>Every tea and tisane on the shelf, keyed by the color in the cup.</p>
+    </a>
+    <a class="hub-card" href="pages/hubs/origins.html" style="--hub-c:var(--cat-regions)">
+      <span class="hub-card-title">Origins</span>
+      <p>Countries, mountains, gardens, and the terroir that shapes each cup.</p>
+    </a>
+    <a class="hub-card" href="pages/hubs/craft.html" style="--hub-c:var(--cat-processing)">
+      <span class="hub-card-title">The Craft</span>
+      <p>The plant, the pluck, the factory floor, and the years in storage.</p>
+    </a>
+    <a class="hub-card" href="pages/hubs/table.html" style="--hub-c:var(--cat-brewing)">
+      <span class="hub-card-title">The Table</span>
+      <p>Water, vessels, technique, and the vocabulary of the palate.</p>
+    </a>
+  </div>
+
+  <div class="home-section-head">
+    <h2 class="home-section-title">Recently added</h2>
+  </div>
+  <div id="recent"></div>
+
+  <footer class="page-footer">
+    <span class="pf-label">hd-tea · a practitioner's atlas</span>
+  </footer>
+</main>
+<script src="scripts/theme.js"></script>
+<script src="scripts/homepage.js"></script>
+</body>
+</html>

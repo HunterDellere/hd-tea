@@ -1,0 +1,6 @@
+node_modules/
+pages/
+data/entries.json
+data/search-index.json
+local/
+.DS_Store

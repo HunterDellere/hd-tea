@@ -1,0 +1,11 @@
+{
+  "_comment": "Canonical claims registry. When a page mentions one of these names near a year or range, validate-claims.mjs checks the cited value against this registry. ERROR on mismatch; WARN when the page softens with 'c.'. Grow this file as content grows: every hard fact that appears on more than one page belongs here.",
+  "claims": [
+    { "name": "Lu Yu", "kind": "years", "value": [733, 804], "note": "Tang dynasty author of the Classic of Tea", "source": "Mair & Hoh" },
+    { "name": "Classic of Tea", "kind": "circa_year", "value": 760, "tolerance": 20, "note": "茶经, completed roughly 760–780 CE", "source": "Mair & Hoh" },
+    { "name": "Wuyi", "kind": "unesco_year", "value": 1999, "note": "Mount Wuyi inscribed as mixed cultural/natural World Heritage", "source": "UNESCO" },
+    { "name": "Jingmai", "kind": "unesco_year", "value": 2023, "note": "Cultural Landscape of Old Tea Forests of Jingmai Mountain inscribed", "source": "UNESCO" },
+    { "name": "Jin Xuan", "kind": "cultivar_number", "value": "TTES No. 12", "note": "Taiwan Tea Experiment Station cultivar 12, released 1981", "source": "TRES" },
+    { "name": "Book of Tea", "kind": "circa_year", "value": 1906, "tolerance": 0, "note": "Okakura Kakuzō, published 1906", "source": "Okakura" }
+  ]
+}

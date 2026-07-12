@@ -1,0 +1,57 @@
+{
+  "site": {
+    "name": "hd-tea",
+    "tagline": "A working atlas of tea: origins, craft, and the table.",
+    "url": "",
+    "themeColorLight": "#f1eee7",
+    "themeColorDark": "#16151a"
+  },
+  "hubs": {
+    "library": {
+      "title": "The Library",
+      "desc": "Every tea and tisane on the shelf, keyed by the color in the cup.",
+      "members": ["teas", "tisanes"],
+      "nav": "Library"
+    },
+    "origins": {
+      "title": "Origins",
+      "desc": "The places tea comes from: countries, mountains, gardens, and the terroir that shapes each cup.",
+      "members": ["regions"],
+      "nav": "Origins"
+    },
+    "craft": {
+      "title": "The Craft",
+      "desc": "How tea is made: the plant, the pluck, the factory floor, and the years in storage.",
+      "members": ["cultivation", "harvest", "processing", "storage"],
+      "nav": "Craft"
+    },
+    "table": {
+      "title": "The Table",
+      "desc": "How tea is brewed, tasted, and served: water, vessels, technique, and the vocabulary of the palate.",
+      "members": ["brewing", "tasting", "teaware"],
+      "nav": "Table"
+    }
+  },
+  "categories": {
+    "regions":     { "label": "Regions",     "hub": "origins", "desc": "Tea-producing places and their terroir." },
+    "teas":        { "label": "Teas",        "hub": "library", "desc": "Individual teas from the six types." },
+    "tisanes":     { "label": "Tisanes",     "hub": "library", "desc": "Herbal infusions beyond Camellia sinensis." },
+    "cultivation": { "label": "Cultivation", "hub": "craft",   "desc": "The plant, the garden, and the growing year." },
+    "harvest":     { "label": "Harvest",     "hub": "craft",   "desc": "Plucking standards, seasons, and flushes." },
+    "processing":  { "label": "Processing",  "hub": "craft",   "desc": "Withering, oxidation, firing, rolling, aging." },
+    "storage":     { "label": "Storage",     "hub": "craft",   "desc": "Keeping tea well, from tins to aging rooms." },
+    "brewing":     { "label": "Brewing",     "hub": "table",   "desc": "Parameters, methods, and water." },
+    "tasting":     { "label": "Tasting",     "hub": "table",   "desc": "Method and vocabulary for reading a cup." },
+    "teaware":     { "label": "Teaware",     "hub": "table",   "desc": "Vessels and tools, and what they change." },
+    "hubs":        { "label": "Hubs",        "hub": null,       "desc": "Index pages." }
+  },
+  "teaTypes": {
+    "green":  { "native": "绿", "label": "Green" },
+    "white":  { "native": "白", "label": "White" },
+    "yellow": { "native": "黄", "label": "Yellow" },
+    "oolong": { "native": "青", "label": "Oolong" },
+    "black":  { "native": "红", "label": "Black" },
+    "dark":   { "native": "黑", "label": "Dark" },
+    "tisane": { "native": "草", "label": "Tisane" }
+  }
+}

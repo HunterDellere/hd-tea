@@ -1,0 +1,216 @@
+/*
+ * hd-tea — tokens.css
+ *
+ * Design-token layer for the whole site. Imported at the top of style.css.
+ *
+ * The site has two deliberate registers, not a generic light/dark flip:
+ *   Light — "The Six Liquors": warm porcelain ground, pine ink, and the
+ *           real liquor spectrum of the six tea types as the only
+ *           saturated color. The catalogue register.
+ *   Dark  — "The Night Kiln": Jian-ware iron glaze, kiln-flame amber,
+ *           oil-spot blue. The session register.
+ *
+ * Both registers share the same structural atoms: the top-down cup
+ * (liquor circle) and the steep curve (infusion timeline). Liquor colors
+ * are data, not decoration — they come from each tea's frontmatter and
+ * are shared verbatim across themes.
+ */
+
+/* ── LIGHT — The Six Liquors ─────────────────────────────── */
+:root {
+  color-scheme: light;
+
+  /* Ground — porcelain family */
+  --ground:    #f1eee7;
+  --ground-2:  #f9f7f2;   /* raised surfaces: cards, panels */
+  --ground-3:  #e9e5da;   /* recessed: wells, code, table stripes */
+  --ground-4:  #dfdaca;
+
+  /* Text — roasted ink family */
+  --ink:       #2b2620;
+  --ink-2:     #3d372e;
+  --ink-3:     #6f685c;
+  --ink-4:     #948c7c;
+
+  /* Accents */
+  --pine:      #3a5240;   /* primary UI accent (links, active states) */
+  --pine-2:    #4c6a54;
+  --pine-tint: rgba(58, 82, 64, 0.08);
+  --flame:     #b06a28;   /* warm counterpoint; dark mode promotes it */
+  --spot:      #4f7080;   /* water/oil-spot blue; rivers, cool notes */
+
+  --rule:      rgba(58, 82, 64, 0.18);
+  --rule-2:    rgba(58, 82, 64, 0.10);
+  --shadow:    rgba(43, 38, 32, 0.10);
+
+  /* Cup rim — the porcelain ring around every liquor circle */
+  --cup-rim:   #fbfaf5;
+
+  /* Topnav */
+  --nav-bg:    #262f28;
+  --nav-fg:    #e9ede7;
+  --nav-fg-dim:#a8b2a8;
+  --nav-accent:#c9a45c;
+
+  /* ── The liquor spectrum (shared across themes — it is data) ──
+     Each type gets hi/mid/deep for the cup's radial gradient.
+     Per-tea pages override with the tea's own liquor hex via the
+     build (lib/liquor.mjs derives hi/deep from the authored mid). */
+  --lq-green-hi: #e9eec2;  --lq-green: #ccd68f;  --lq-green-deep: #a2b262;
+  --lq-white-hi: #f5ecc9;  --lq-white: #e3d09a;  --lq-white-deep: #c2a765;
+  --lq-yellow-hi:#f4e3a4;  --lq-yellow:#dcc26a;  --lq-yellow-deep:#b3943c;
+  --lq-oolong-hi:#f0ca80;  --lq-oolong:#cf9434;  --lq-oolong-deep:#96651c;
+  --lq-black-hi: #e09a56;  --lq-black: #b05a20;  --lq-black-deep: #77380f;
+  --lq-dark-hi:  #b06a34;  --lq-dark:  #6b3410;  --lq-dark-deep:  #421e08;
+  --lq-tisane-hi:#e8b0b4;  --lq-tisane:#b4515e;  --lq-tisane-deep:#7c2f3c;
+
+  /* ── Per-category accents (chips, card borders, hub art) ── */
+  --cat-regions:     #43606e;   /* mist slate — terroir */
+  --cat-teas:        #96651c;   /* oolong gold — the library default */
+  --cat-tisanes:     #a04858;   /* hibiscus */
+  --cat-cultivation: #5c7046;   /* field green */
+  --cat-harvest:     #907036;   /* straw */
+  --cat-processing:  #7a4a28;   /* roast */
+  --cat-brewing:     #4f7566;   /* celadon */
+  --cat-tasting:     #8e5a6e;   /* plum */
+  --cat-teaware:     #58585e;   /* iron */
+  --cat-storage:     #6b5a40;   /* cedar */
+  --cat-hubs:        #3a5240;   /* pine */
+
+  /* Type */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-body:    'Albert Sans', 'Avenir Next', 'Helvetica Neue', sans-serif;
+  --font-mono:    'Fragment Mono', ui-monospace, Menlo, monospace;
+  --font-cjk:     'Noto Serif SC', 'Songti SC', 'Hiragino Mincho ProN', serif;
+
+  /* Layout */
+  --sidebar-w: 225px;
+  --nav-h: 48px;
+  --content-max: 46rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius:    7px;
+  --radius-lg: 11px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --t-fast: 0.12s;
+  --t-base: 0.16s;
+  --t-slow: 0.25s;
+  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index ladder */
+  --z-nav: 200;
+  --z-toc-toggle: 201;
+  --z-skip: 300;
+
+  /* Type scale */
+  --fs-2xs: 0.6rem;
+  --fs-xs:  0.66rem;
+  --fs-sm:  0.74rem;
+  --fs-md:  0.82rem;
+  --fs-base:0.92rem;
+  --fs-lg:  1.05rem;
+  --fs-xl:  1.2rem;
+  --fs-2xl: 1.45rem;
+  --fs-3xl: 1.8rem;
+  --fs-display:   2.3rem;
+  --fs-display-2: 3rem;
+  --fs-display-3: 3.8rem;
+
+  --tracking-label: 0.18em;
+
+  --focus-ring: 0 0 0 2px rgba(58, 82, 64, 0.4);
+}
+
+/* ── DARK — The Night Kiln ───────────────────────────────── */
+/* Path A: explicit data-theme="dark" (set by the pre-paint script) */
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Ground — iron glaze family */
+  --ground:    #16151a;
+  --ground-2:  #1e1c22;
+  --ground-3:  #121116;
+  --ground-4:  #2a272f;
+
+  /* Text — ash family */
+  --ink:       #e6e0d6;
+  --ink-2:     #d5cec2;
+  --ink-3:     #9a948a;
+  --ink-4:     #6e6960;
+
+  /* Accents — flame leads at night */
+  --pine:      #e08f3c;   /* kiln flame takes the primary-accent slot */
+  --pine-2:    #eaa45c;
+  --pine-tint: rgba(224, 143, 60, 0.10);
+  --flame:     #e08f3c;
+  --spot:      #5f8e9c;
+
+  --rule:      rgba(230, 224, 214, 0.15);
+  --rule-2:    rgba(230, 224, 214, 0.08);
+  --shadow:    rgba(0, 0, 0, 0.45);
+
+  --cup-rim:   #2e2b33;
+
+  --nav-bg:    #121116;
+  --nav-fg:    #e6e0d6;
+  --nav-fg-dim:#9a948a;
+  --nav-accent:#e08f3c;
+
+  /* Category accents — lifted for legibility on iron */
+  --cat-regions:     #6f96a6;
+  --cat-teas:        #cf9434;
+  --cat-tisanes:     #cf7080;
+  --cat-cultivation: #8fa672;
+  --cat-harvest:     #c2a05c;
+  --cat-processing:  #b07848;
+  --cat-brewing:     #7ba694;
+  --cat-tasting:     #bd8aa0;
+  --cat-teaware:     #93939c;
+  --cat-storage:     #a08a64;
+  --cat-hubs:        #8fb096;
+
+  --focus-ring: 0 0 0 2px rgba(224, 143, 60, 0.45);
+}
+
+/* Path B: OS preference when no explicit choice stored */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ground:    #16151a;
+    --ground-2:  #1e1c22;
+    --ground-3:  #121116;
+    --ground-4:  #2a272f;
+    --ink:       #e6e0d6;
+    --ink-2:     #d5cec2;
+    --ink-3:     #9a948a;
+    --ink-4:     #6e6960;
+    --pine:      #e08f3c;
+    --pine-2:    #eaa45c;
+    --pine-tint: rgba(224, 143, 60, 0.10);
+    --flame:     #e08f3c;
+    --spot:      #5f8e9c;
+    --rule:      rgba(230, 224, 214, 0.15);
+    --rule-2:    rgba(230, 224, 214, 0.08);
+    --shadow:    rgba(0, 0, 0, 0.45);
+    --cup-rim:   #2e2b33;
+    --nav-bg:    #121116;
+    --nav-fg:    #e6e0d6;
+    --nav-fg-dim:#9a948a;
+    --nav-accent:#e08f3c;
+    --cat-regions:     #6f96a6;
+    --cat-teas:        #cf9434;
+    --cat-tisanes:     #cf7080;
+    --cat-cultivation: #8fa672;
+    --cat-harvest:     #c2a05c;
+    --cat-processing:  #b07848;
+    --cat-brewing:     #7ba694;
+    --cat-tasting:     #bd8aa0;
+    --cat-teaware:     #93939c;
+    --cat-storage:     #a08a64;
+    --cat-hubs:        #8fb096;
+    --focus-ring: 0 0 0 2px rgba(224, 143, 60, 0.45);
+  }
+}
